@@ -7,31 +7,9 @@ CREATE TABLE EMPRESA(
 	`codigoEmpresa` INT PRIMARY KEY NOT NULL,
   `rutEmpresa` VARCHAR(30) NOT NULL,
   `direccionEmpresa` VARCHAR(50) NOT NULL
-);
-DROP TABLE IF EXISTS `EMPLEADO`;
-CREATE TABLE EMPLEADO(
-`rutEmpleado` VARCHAR(10) PRIMARY KEY NOT NULL,
-`nombreEmpleado` VARCHAR(50) NOT NULL,
-`categoria` VARCHAR(1) NOT NULL
-);
-DROP TABLE IF EXISTS `PARTICULAR`;
-CREATE TABLE PARTICULAR(
-	`codigoParticular` INT PRIMARY KEY NOT NULL,
-  `rutParticular` VARCHAR(45) NOT NULL,
-  `nombreParticular` VARCHAR(45) NOT NULL,
-  `direccionParticular` VARCHAR(45) NOT NULL,
-  `emailParticular` VARCHAR(100) NOT NULL
+	CONSTRAINT empresa_usuario_fk FOREING KEY (codigoEmpresa) REFERENCES USUARIO (codigoUsuario)
 );
 
-DROP TABLE IF EXISTS `usuario`;
-CREATE TABLE `usuario` (
-  `codigoUsuario` varchar(10) NOT NULL,
-  `nombreUsuario` varchar(30) NOT NULL,
-  `TipoUsuario` varchar(15) NOT NULL,
-	`passwordUsuario`VARCHAR(15) NOT NULL,
-  `EstadoUsuario` char(3) DEFAULT 'INH',
-  PRIMARY KEY (`codigoUsuario`)
-);
 DROP TABLE IF EXISTS `CONTACTO`;
 CREATE TABLE CONTACTO(
 	`rutContacto` VARCHAR(10) PRIMARY KEY NOT NULL,
@@ -41,6 +19,27 @@ CREATE TABLE CONTACTO(
   `Empresa_codigoEmpresa` INT NOT NULL,
   CONSTRAINT contacto_empresa_fk FOREIGN KEY (Empresa_codigoEmpresa) REFERENCES EMPRESA(codigoEmpresa)
 );
+
+DROP TABLE IF EXISTS `PARTICULAR`;
+CREATE TABLE PARTICULAR(
+	`codigoParticular` INT PRIMARY KEY NOT NULL,
+  `rutParticular` VARCHAR(45) NOT NULL,
+  `nombreParticular` VARCHAR(45) NOT NULL,
+  `direccionParticular` VARCHAR(45) NOT NULL,
+  `emailParticular` VARCHAR(100) NOT NULL
+	CONSTRAINT particu_usuario_fk FOREING KEY (codigoParticular) REFERENCES USUARIO (codigoUsuario)
+);
+
+DROP TABLE IF EXISTS `USUARIO`;
+CREATE TABLE `USUARIO` (
+  `codigoUsuario` varchar(10) NOT NULL,
+  `nombreUsuario` varchar(30) NOT NULL,
+  `TipoUsuario` varchar(15) NOT NULL,
+	`passwordUsuario`VARCHAR(15) NOT NULL,
+  `EstadoUsuario` char(3) DEFAULT 'INH',
+  PRIMARY KEY (`codigoUsuario`)
+);
+
 DROP TABLE IF EXISTS `TELEFONO`;
 CREATE TABLE TELEFONO(
 	`idTelefono` INT PRIMARY KEY NOT NULL,
@@ -52,7 +51,7 @@ CREATE TABLE TELEFONO(
 DROP TABLE IF EXISTS `TIPOANALISIS`;
 CREATE TABLE TIPOANALISIS(
 `	idTipoAnalisis` INT PRIMARY KEY NOT NULL,
-    `nombre` VARCHAR(45) NOT NULL
+`nombre` VARCHAR(45) NOT NULL
 );
 
 DROP TABLE IF EXISTS `ANALISISMUESTRAS`;
@@ -71,7 +70,7 @@ CREATE TABLE ANALISISMUESTRAS(
 
 DROP TABLE IF EXISTS `RESULTADOANALISIS`;
 CREATE TABLE RESULTADOANALISIS(
-	`idTipoAnalisis` INT NOT NULL,
+	  `idTipoAnalisis` INT NOT NULL,
     `idAnalisisMuestras` INT NOT NULL,
     `fechaRegistro` DATE NOT NULL,
     `PPM` INT NOT NULL,
