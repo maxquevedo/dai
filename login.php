@@ -9,7 +9,7 @@
 		</div>
 		<form class="form-control form-group" name="login" action="verificaLogin.php" method="get">
 			<div class="row form-group">
-				<div class="col-md-1 offset-md-3">
+				<div class="col-md-1 offset-md-4">
 					<span class="font-weight-bold"> Nombre: </span>
 				</div>
 				<div class="col-md-3">
@@ -17,7 +17,7 @@
 				</div>
 			</div>
 			<div class="row form-group">
-				<div class="col-md-1 offset-md-3">
+				<div class="col-md-1 offset-md-4">
 					<span class="font-weight-bold">Contraseña:</span>
 				</div>
 				<div class="col-md-3">
@@ -25,7 +25,7 @@
 				 </div>
 			</div>
 			<div class="row form-group">
-				<div class="col-md-2 offset-md-4">
+				<div class="col-md-2 offset-md-5">
 					<button class="form-control btn btn-primary font-weight-bold" type="submit">Iniciar Sesion</button>
 				</div>
 			</div>
@@ -37,7 +37,7 @@
 	<h3 class="col-lg-12 font-weight-bold offset-md-2">Si no, completa el formulario para auto registrarte</h3>
 </div>
 	<div id="content" class="row form-group">
-		<form class="form-control" method="get" action="registarar.php" name="registrar">
+		<form class="form-control" method="get" action="" name="registrar">
 			<div class="row form-group">
 				<span class="offset-md-4"><h4>¿Eres empresa o particular?</h4></span>
 			</div>
@@ -58,10 +58,10 @@
 <script>
 
 	$("#btnPersona").click(function(){
-		$("#content").load('prueba.txt');
+		$("#content").load('form-particular.php');
 	});
 	$("#btnEmpresa").click(function(){
-		$("#").load();
+		$("#content").load('form-empresa.php');
 	});
 
 </script>

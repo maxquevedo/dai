@@ -2,7 +2,8 @@
 <html lang="es">
 	<head>
 		<meta charset="utf-8" >
-		<title>DAI</title>
+		<title>Pelotillehue</title>
+		<link rel="icon" href="img/favicon.png">
 		<script src="js/jquery-3.3.1.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="css/bootstrap.css">
