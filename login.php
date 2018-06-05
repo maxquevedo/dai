@@ -36,24 +36,35 @@
 <div class="row form-group ">
 	<h3 class="col-lg-12 font-weight-bold offset-md-2">Si no, completa el formulario para auto registrarte</h3>
 </div>
-	<div class="row form-group">
+	<div id="content" class="row form-group">
 		<form class="form-control" method="get" action="registarar.php" name="registrar">
 			<div class="row form-group">
-				<span class="offset-md-4">¿Eres empresa o particular?</span>
+				<span class="offset-md-4"><h4>¿Eres empresa o particular?</h4></span>
 			</div>
 			<div class="row form-group">
 				<div class="col-md-2 offset-md-3">
-					<input id="btnEmpresa" type="checkbox" name="btnEmpresa">
-					<label for="btnEmpresa">Empresa</label>
+					<input id="btnEmpresa" type="radio" name="btnTipoUsuario">
+					<label for="btnEmpresa"><h5>Empresa</h5></label>
 				</div>
 				<div class="col offset-md-1">
-					<input id="btnPersona" type="checkbox" name="btnPersona">
-					<label for="btnPersona">Persona</label>
+					<input id="btnPersona" type="radio" name="btnTipoUsuario">
+					<label for="btnPersona"><h5>Persona</h5></label>
 				</div>
 			</div>
 		</form>
 	</div>
 
+
+<script>
+
+	$("#btnPersona").click(function(){
+		$("#content").load('prueba.txt');
+	});
+	$("#btnEmpresa").click(function(){
+		$("#").load();
+	});
+
+</script>
 
 <?php
 	include('footer.php');
