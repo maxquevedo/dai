@@ -35,6 +35,12 @@ CREATE TABLE EMPRESA(
   `direccionEmpresa` VARCHAR(50) NOT NULL,
 CONSTRAINT empresa_usuario_fk FOREIGN KEY (codigoEmpresa) REFERENCES USUARIO(codigoUsuario)
 );
+DROP TABLE IF EXISTS `EMPLEADO`;
+CREATE TABLE `EMPLEADO` (
+  `rutEmpleado` varchar(10) NOT NULL,
+  `nombreEmpleado` varchar(50) NOT NULL,
+  `categoria` varchar(1) NOT NULL
+)
 
 DROP TABLE IF EXISTS `CONTACTO`;
 CREATE TABLE CONTACTO(
@@ -81,8 +87,3 @@ CREATE TABLE TELEFONO(
     `Particular_codigoParticular` INT NOT NULL,
     CONSTRAINT TELEFONO_PARTICULAR_FK FOREIGN KEY (Particular_codigoParticular) REFERENCES PARTICULAR(codigoParticular)
 );
-
-
-
-
-
