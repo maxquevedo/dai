@@ -15,7 +15,7 @@
 				<span>Rut  </span>
 		</div>
 		<div class="col-lg-3 ">
-			<input id="rutEmpresa" type="text" class="form-control" name="rut">
+			<input id="rut" type="text" class="form-control" name="rut">
 		</div>
 	</div>
 	<div class="row form-group">
