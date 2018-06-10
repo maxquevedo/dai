@@ -26,7 +26,7 @@
 			<input id="contraseña" type="text" class="form-control" name="contraseña">
 		</div>
 	</div>
-	<h4 class=" col-lg-9 font-weight-bold offset-md-2 text-center"> Persona</h4>
+	<h4 class=" col-lg-9 font-weight-bold offset-md-2 text-center"> Contacto</h4>
 	<div class="row form-group">
 		<div class="col-md-1 offset-md-4 form-group">
 				<span>Rut  </span>

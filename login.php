@@ -1,5 +1,6 @@
 <?php
 	include('head.php');
+	require('conexion_bd.php');
 ?>
 
 <!--Login-->
@@ -7,7 +8,7 @@
 		<div class="row form-group">
 			<h3 class="col-lg-12 font-weight-bold offset-md-4">Si ya has pedido muestras antes, ¡Inicia sesión!</h3>
 		</div>
-		<form class="form-control form-group" name="login" action="verificaLogin.php" method="get">
+		<form class="form-control form-group" name="login" action="verificaLogin.php" method="post">
 			<div class="row form-group">
 				<div class="col-md-1 offset-md-4">
 					<span class="font-weight-bold"> Nombre: </span>
