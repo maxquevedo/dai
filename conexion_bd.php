@@ -1,7 +1,7 @@
 <?php
 	
-	if (file_exists(_DIR_ADODB."adodb.inc.php"))
-		require _DIR_ADODB."adodb.inc.php";
+	if (file_exists('_DIR_ADODB'."adodb.inc.php"))
+		require '_DIR_ADODB'."adodb.inc.php";
 	else
 		require 'adodb/adodb.inc.php';
 
@@ -12,7 +12,7 @@
 	
 	if (!isset($GLOBALS['db']) || !is_object($GLOBALS['db']))
 	{
-		$GLOBALS['db'] = NewADOConnection('mysql');
+		$GLOBALS['db'] = NewADOConnection('mysqli');
 
 		if (!@$GLOBALS['db']->Connect($host, $user, $pass, $bd))
 		{
