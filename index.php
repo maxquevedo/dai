@@ -15,7 +15,7 @@
 			<img class="img-fluid" width="100%" src="img/ambulancia.jpg">
 		</div>
 	</div>
-	<div class="row rounded" style="background-color: #23252B; margin-top: 2%; margin-bottom: 2%;">
+	<div class="row rounded" style="background-color: #281014; margin-top: 2%; margin-bottom: 2%;">
 		<div class="col-lg-2 offset-lg-2">
 			<img class="img-fluid rounded-circle" width="100%" src="img/ref.jpg">
 		</div>
@@ -23,7 +23,7 @@
 			<p><h2 class="font-italic" style="color:white;">"Los doctores supieron llevar mi operación muy bien"</h2></p>
 		</div>
 	</div>
-	<div class="row rounded" style="background-color: #938A03;  margin-top: 2%; margin-bottom: 2%;">
+	<div class="row rounded" style="background-color: #23252B;  margin-top: 2%; margin-bottom: 2%;">
 		<div class="col-lg-2 offset-lg-2">
 			<img class="img-fluid rounded-circle" width="100%" src="img/ref2.jpg">
 		</div>
@@ -31,7 +31,7 @@
 			<p><h2 class="font-italic" style="color:white;">"La rápida llegada de los paramédicos salvó la vida de mi marido"</h2></p>
 		</div>
 	</div>
-	<div class="row rounded" style="background-color: #281014;  margin-top: 2%; margin-bottom: 2%;">
+	<div class="row rounded" style="background-color: #938A03;  margin-top: 2%; margin-bottom: 2%;">
 		<div class="col-lg-2 offset-lg-2">
 			<img class="img-fluid rounded-circle" width="100%" src="img/ref3.jpg">
 		</div>
