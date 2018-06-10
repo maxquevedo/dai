@@ -18,7 +18,7 @@
 				color:black;
 			}
 			a:hover{
-				background-color: #496C89;
+				background-color: #293B57;
 				padding-top: 10px;
 				padding-bottom: 10px;
 				padding-left: 2px;
@@ -37,11 +37,11 @@
 		<header>
 			<img class="img-fluid" width="100%" src="http://wakonyu.org/wp-content/uploads/2017/02/Jalaram-Hospital-Kisumu-Jalaram-Maternity-and-Nursing-Home.jpg" style="height: 280px;">
 		</header>
-		<nav class="nav navbar navbar-light bg-light">
-			<ul class="nav item">
-				<li class="nav-link active "><a id="navInicio" name="navInicio" href="index.php">Inicio</a></li>
-				<li class="nav-link "><a id="navEnvio" name="navEnvio" href="login.php">Envio de muestras </a></li>
-				<li class="nav-link "><a id="navChao" name="navChao" href="#">Chao</a></li>
+		<nav class="nav navbar navbar-light" style="background-color: #7E0F0C;">
+			<ul class="nav item font-weight-bold">
+				<li class="nav-link active "><a id="navInicio" name="navInicio" href="index.php" style="color:white;">Inicio</a></li>
+				<li class="nav-link "><a id="navEnvio" name="navEnvio" href="login.php" style="color:white;">Envio de muestras </a></li>
+				<li class="nav-link "><a id="navChao" name="navChao" href="#" style="color:white;">Chao</a></li>
 			</ul>
 		</nav>
 		<div class="container">
