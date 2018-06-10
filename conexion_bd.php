@@ -1,5 +1,5 @@
 <?php
-
+	
 	if (file_exists(_DIR_ADODB."adodb.inc.php"))
 		require _DIR_ADODB."adodb.inc.php";
 	else
@@ -7,8 +7,8 @@
 
 	$host = "localhost";
 	$user = "root";
-	$pass = "clave";
-	$bd   = "bestado_cartas";
+	$pass = "";
+	$bd   = "dai";
 	
 	if (!isset($GLOBALS['db']) || !is_object($GLOBALS['db']))
 	{
@@ -23,5 +23,4 @@
 	}
 	
 	$ADODB_FETCH_MODE = ADODB_FETCH_ASSOC;
-
 ?>

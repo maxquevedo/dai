@@ -2,32 +2,10 @@ CREATE DATABASE DAI;
 
 USE  DAI;
 
-DROP TABLE IF EXISTS `EMPRESA`;
-CREATE TABLE EMPRESA(
-	`codigoEmpresa` INT PRIMARY KEY NOT NULL,
-  `rutEmpresa` VARCHAR(30) NOT NULL,
-  `direccionEmpresa` VARCHAR(50) NOT NULL
-	CONSTRAINT empresa_usuario_fk FOREING KEY (codigoEmpresa) REFERENCES USUARIO (codigoUsuario)
-);
-
-DROP TABLE IF EXISTS `CONTACTO`;
-CREATE TABLE CONTACTO(
-	`rutContacto` VARCHAR(10) PRIMARY KEY NOT NULL,
-  `nombreContacto` VARCHAR(30) NOT NULL,
-  `emailContacto` VARCHAR(45) NOT NULL,
-  `telefonoContacto` VARCHAR(15) ,
-  `Empresa_codigoEmpresa` INT NOT NULL,
-  CONSTRAINT contacto_empresa_fk FOREIGN KEY (Empresa_codigoEmpresa) REFERENCES EMPRESA(codigoEmpresa)
-);
-
-DROP TABLE IF EXISTS `PARTICULAR`;
-CREATE TABLE PARTICULAR(
-	`codigoParticular` INT PRIMARY KEY NOT NULL,
-  `rutParticular` VARCHAR(45) NOT NULL,
-  `nombreParticular` VARCHAR(45) NOT NULL,
-  `direccionParticular` VARCHAR(45) NOT NULL,
-  `emailParticular` VARCHAR(100) NOT NULL
-	CONSTRAINT particu_usuario_fk FOREING KEY (codigoParticular) REFERENCES USUARIO (codigoUsuario)
+DROP TABLE IF EXISTS `TIPOANALISIS`;
+CREATE TABLE TIPOANALISIS(
+`	idTipoAnalisis` INT PRIMARY KEY NOT NULL,
+`nombre` VARCHAR(45) NOT NULL
 );
 
 DROP TABLE IF EXISTS `USUARIO`;
@@ -40,19 +18,34 @@ CREATE TABLE `USUARIO` (
   PRIMARY KEY (`codigoUsuario`)
 );
 
-DROP TABLE IF EXISTS `TELEFONO`;
-CREATE TABLE TELEFONO(
-	`idTelefono` INT PRIMARY KEY NOT NULL,
-    `numeroTelefono` VARCHAR(20) NOT NULL,
-    `Particular_codigoParticular` INT NOT NULL,
-    CONSTRAINT TELEFONO_PARTICULAR_FK FOREIGN KEY (Particular_codigoParticular) REFERENCES PARTICULAR(codigoParticular)
+DROP TABLE IF EXISTS `PARTICULAR`;
+CREATE TABLE PARTICULAR(
+  `codigoParticular` INT PRIMARY KEY NOT NULL,
+  `rutParticular` VARCHAR(45) NOT NULL,
+  `nombreParticular` VARCHAR(45) NOT NULL,
+  `direccionParticular` VARCHAR(45) NOT NULL,
+  `emailParticular` VARCHAR(100) NOT NULL,
+	CONSTRAINT particu_usuario_fk FOREIGN KEY (codigoParticular) REFERENCES Usuario(codigoUsuario)
 );
 
-DROP TABLE IF EXISTS `TIPOANALISIS`;
-CREATE TABLE TIPOANALISIS(
-`	idTipoAnalisis` INT PRIMARY KEY NOT NULL,
-`nombre` VARCHAR(45) NOT NULL
+DROP TABLE IF EXISTS `EMPRESA`;
+CREATE TABLE EMPRESA(
+  `codigoEmpresa` INT PRIMARY KEY NOT NULL,
+  `rutEmpresa` VARCHAR(30) NOT NULL,
+  `direccionEmpresa` VARCHAR(50) NOT NULL,
+	CONSTRAINT empresa_usuario_fk FOREIGN KEY (codigoEmpresa) REFERENCES USUARIO(codigoUsuario)
 );
+
+DROP TABLE IF EXISTS `CONTACTO`;
+CREATE TABLE CONTACTO(
+	`rutContacto` VARCHAR(10) PRIMARY KEY NOT NULL,
+  `nombreContacto` VARCHAR(30) NOT NULL,
+  `emailContacto` VARCHAR(45) NOT NULL,
+  `telefonoContacto` VARCHAR(15) ,
+  `Empresa_codigoEmpresa` INT NOT NULL,
+  CONSTRAINT contacto_empresa_fk FOREIGN KEY (Empresa_codigoEmpresa) REFERENCES EMPRESA(codigoEmpresa)
+);
+
 
 DROP TABLE IF EXISTS `ANALISISMUESTRAS`;
 CREATE TABLE ANALISISMUESTRAS(
@@ -77,6 +70,19 @@ CREATE TABLE RESULTADOANALISIS(
     `estado` BIT NOT NULL,
     `rutEmpleadoAnalista` VARCHAR(10),
 	CONSTRAINT RESULTADO_TIPO_FK FOREIGN KEY (idTipoAnalisis) REFERENCES TIPOANALISIS(idTipoAnalisis),
-    CONSTRAINT RESULTADO_ANALISIS_FK FOREIGN KEY (idAnalisisMuestras) REFERENCES ANALISISMUESTRAs(idAnalisisMuestras),
+    CONSTRAINT RESULTADO_ANALISIS_FK FOREIGN KEY (idAnalisisMuestras) REFERENCES ANALISISMUESTRAS(idAnalisisMuestras),
     CONSTRAINT RESULTADO_EMPLEADO_FK FOREIGN KEY (rutEmpleadoAnalista) REFERENCES EMPLEADO(rutEmpleado)
 );
+
+DROP TABLE IF EXISTS `TELEFONO`;
+CREATE TABLE TELEFONO(
+	`idTelefono` INT PRIMARY KEY NOT NULL,
+    `numeroTelefono` VARCHAR(20) NOT NULL,
+    `Particular_codigoParticular` INT NOT NULL,
+    CONSTRAINT TELEFONO_PARTICULAR_FK FOREIGN KEY (Particular_codigoParticular) REFERENCES PARTICULAR(codigoParticular)
+);
+
+
+
+
+

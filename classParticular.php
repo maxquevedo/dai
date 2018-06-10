@@ -7,8 +7,10 @@
 		function __construct($rut,$nombre,$contraseña,$direccion,$cod,$email){
 			parent::__construct($rut,$nombre,$contraseña,$direccion);
 			$this->codigo = $cod;
-			$this->email = $email;
+			$this->email = $email;	
 		}
 
 	}
+
+	require('conexion_bd.php');
 ?>

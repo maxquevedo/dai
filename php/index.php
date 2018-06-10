@@ -2,14 +2,14 @@
 
 	include bd.inc.php;
 	
-	$sql = "SELECT * FROM usuario";
+	$sql = "SELECT * FROM users";
 	if ($rs = $GLOBALS['db']->Execute($sql))
 	{
 		while (!$rs->EOF)
 		{
-			echo $rs->fields["pnombre"];
-			//echo $rs->fields[NOMBRE_CAMPO];
-			//echo $rs->fields[NOMBRE_CAMPO];
+			echo $rs->fields[NOMBRE_CAMPO];
+			echo $rs->fields[NOMBRE_CAMPO];
+			echo $rs->fields[NOMBRE_CAMPO];
 			$rs->MoveNext();
 		}
 	}

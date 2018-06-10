@@ -9,5 +9,11 @@
 			$this->codigo = $cod;
 		}
 
+		require('conexion_bd.php');
+
+		function guardar(){
+			$sql = "INSERT INTO VALUES();"
+		}
+
 	}
 ?>
