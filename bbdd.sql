@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS `DAI`;
 CREATE DATABASE DAI;
 
 USE  DAI;
@@ -20,12 +21,11 @@ CREATE TABLE `USUARIO` (
 
 DROP TABLE IF EXISTS `PARTICULAR`;
 CREATE TABLE PARTICULAR(
-  `codigoParticular` INT PRIMARY KEY NOT NULL,
+  `codigoParticular` INT PRIMARY KEY,
   `rutParticular` VARCHAR(45) NOT NULL,
   `nombreParticular` VARCHAR(45) NOT NULL,
   `direccionParticular` VARCHAR(45) NOT NULL,
-  `emailParticular` VARCHAR(100) NOT NULL,
-	CONSTRAINT particu_usuario_fk FOREIGN KEY (codigoParticular) REFERENCES Usuario(codigoUsuario)
+  `emailParticular` VARCHAR(100) NOT NULL
 );
 
 DROP TABLE IF EXISTS `EMPRESA`;
@@ -33,7 +33,7 @@ CREATE TABLE EMPRESA(
   `codigoEmpresa` INT PRIMARY KEY NOT NULL,
   `rutEmpresa` VARCHAR(30) NOT NULL,
   `direccionEmpresa` VARCHAR(50) NOT NULL,
-	CONSTRAINT empresa_usuario_fk FOREIGN KEY (codigoEmpresa) REFERENCES USUARIO(codigoUsuario)
+CONSTRAINT empresa_usuario_fk FOREIGN KEY (codigoEmpresa) REFERENCES USUARIO(codigoUsuario)
 );
 
 DROP TABLE IF EXISTS `CONTACTO`;
