@@ -39,8 +39,8 @@
 		</header>
 		<nav class="nav navbar navbar-light bg-light">
 			<ul class="nav item">
-				<li class="nav-link active "><a id="navInicio" name="navInicio" href="#">Inicio</a></li>
-				<li class="nav-link "><a id="navEnvio" name="navEnvio" href="#">Envio de muestras </a></li>
+				<li class="nav-link active "><a id="navInicio" name="navInicio" href="index.php">Inicio</a></li>
+				<li class="nav-link "><a id="navEnvio" name="navEnvio" href="login.php">Envio de muestras </a></li>
 				<li class="nav-link "><a id="navChao" name="navChao" href="#">Chao</a></li>
 			</ul>
 		</nav>

@@ -13,6 +13,7 @@
 
 		function guardar(){
 			$sql = "INSERT INTO VALUES();"
+			echo "-- FUNCIONO --";
 		}
 
 	}
