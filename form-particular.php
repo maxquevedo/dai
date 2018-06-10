@@ -1,4 +1,7 @@
 <form class="form-control" method="get" action="registrarParticular.php" name="registrar">
+	<div class="row form-group ">
+		<h4 class=" col-lg-9 font-weight-bold offset-md-2 text-center"> Particular</h4>
+	</div>
 	<div class="row form-group">
 		<div class="col-md-1 offset-md-4 form-group">
 				<span>Código  </span>
