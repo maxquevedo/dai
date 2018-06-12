@@ -29,9 +29,6 @@
 			}
 
 		</style>
-		<?php
-
-		?>
 	</head>
 	<body>
 		<header>
@@ -41,7 +38,9 @@
 			<ul class="nav item font-weight-bold">
 				<li class="nav-link active "><a id="navInicio" name="navInicio" href="index.php" style="color:white;">Inicio</a></li>
 				<li class="nav-link "><a id="navEnvio" name="navEnvio" href="login.php" style="color:white;">Envio de muestras </a></li>
-				<li class="nav-link "><a id="navChao" name="navChao" href="#" style="color:white;">Chao</a></li>
 			</ul>
+				<ul class="nav item font-weight-bold">
+					<li class="nav-link justify-content-end"><a id="navIniciarSesion" name="navIniciarSesion" href="iniciarSesion.php" style="color:white;">Iniciar Sesion</a></li>
+					</ul>
 		</nav>
 		<div class="container">
