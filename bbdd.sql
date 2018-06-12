@@ -11,17 +11,17 @@ CREATE TABLE TIPOANALISIS(
 
 DROP TABLE IF EXISTS `USUARIO`;
 CREATE TABLE `USUARIO` (
-  `codigoUsuario` varchar(10) NOT NULL,
-  `nombreUsuario` varchar(30) NOT NULL,
-  `TipoUsuario` varchar(15) NOT NULL,
+  `codigoUsuario` VARCHAR(10) NOT NULL,
+  `nombreUsuario` VARCHAR(30) NOT NULL,
+  `TipoUsuario` VARCHAR(15) NOT NULL,
 	`passwordUsuario`VARCHAR(15) NOT NULL,
-  `EstadoUsuario` char(3) DEFAULT 'INH',
+  `EstadoUsuario` CHAR(3) DEFAULT 'INH',
   PRIMARY KEY (`codigoUsuario`)
 );
 
 DROP TABLE IF EXISTS `PARTICULAR`;
 CREATE TABLE PARTICULAR(
-  `codigoParticular` INT PRIMARY KEY,
+  `codigoParticular` VARCHAR(10) PRIMARY KEY,
   `rutParticular` VARCHAR(45) NOT NULL,
   `nombreParticular` VARCHAR(45) NOT NULL,
   `direccionParticular` VARCHAR(45) NOT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE PARTICULAR(
 
 DROP TABLE IF EXISTS `EMPRESA`;
 CREATE TABLE EMPRESA(
-  `codigoEmpresa` INT PRIMARY KEY NOT NULL,
+  `codigoEmpresa` VARCHAR(10) PRIMARY KEY NOT NULL,
   `rutEmpresa` VARCHAR(30) NOT NULL,
   `direccionEmpresa` VARCHAR(50) NOT NULL,
 CONSTRAINT empresa_usuario_fk FOREIGN KEY (codigoEmpresa) REFERENCES USUARIO(codigoUsuario)
@@ -38,9 +38,9 @@ CONSTRAINT empresa_usuario_fk FOREIGN KEY (codigoEmpresa) REFERENCES USUARIO(cod
 
 DROP TABLE IF EXISTS `EMPLEADO`;
 CREATE TABLE `EMPLEADO` (
-  `rutEmpleado` varchar(10) NOT NULL,
-  `nombreEmpleado` varchar(50) NOT NULL,
-  `categoria` varchar(1) NOT NULL
+  `rutEmpleado` VARCHAR(10) PRIMARY KEY NOT NULL,
+  `nombreEmpleado` VARCHAR(50) NOT NULL,
+  `categoria` CHAR NOT NULL
 );
 
 DROP TABLE IF EXISTS `CONTACTO`;
@@ -49,7 +49,7 @@ CREATE TABLE CONTACTO(
   `nombreContacto` VARCHAR(30) NOT NULL,
   `emailContacto` VARCHAR(45) NOT NULL,
   `telefonoContacto` VARCHAR(15) ,
-  `Empresa_codigoEmpresa` INT NOT NULL,
+  `Empresa_codigoEmpresa` VARCHAR(10) NOT NULL,
   CONSTRAINT contacto_empresa_fk FOREIGN KEY (Empresa_codigoEmpresa) REFERENCES EMPRESA(codigoEmpresa)
 );
 
@@ -57,34 +57,32 @@ CREATE TABLE CONTACTO(
 DROP TABLE IF EXISTS `ANALISISMUESTRAS`;
 CREATE TABLE ANALISISMUESTRAS(
 	`idAnalisisMuestras` INT PRIMARY KEY NOT NULL,
-    `fechaRecepcion` DATE NOT NULL,
-    `temperaturaMuestra` DECIMAL(3,1) NOT NULL,
-    `cantidadMuestra` INT NOT NULL,
-    `Empresa_codigoEmpresa` INT NOT NULL,
-    `Particular_codigoParticular` INT NOT NULL,
-    `rutEmpleadoRecibe` VARCHAR(10) NOT NULL,
-    CONSTRAINT EMPRESA_ANALISIS_FK FOREIGN KEY (Empresa_codigoEmpresa) REFERENCES EMPRESA(codigoEmpresa),
-    CONSTRAINT PARTICULAR_ANALISIS_FK FOREIGN KEY (Particular_codigoParticular) REFERENCES PARTICULAR(codigoParticular),
-    CONSTRAINT EMPLEADO_ANALISIS_FK FOREIGN KEY (rutEmpleadoRecibe) REFERENCES EMPLEADO(rutEmpleado)
+  `fechaRecepcion` DATE NOT NULL,
+  `temperaturaMuestra` DECIMAL(3,1) NOT NULL,
+  `cantidadMuestra` INT NOT NULL,
+  `Empresa_codigoEmpresa` VARCHAR(10) NOT NULL,
+  `Particular_codigoParticular` VARCHAR(10) NOT NULL,
+  `rutEmpleadoRecibe` VARCHAR(10) NOT NULL,
+  CONSTRAINT EMPRESA_ANALISIS_FK FOREIGN KEY (Empresa_codigoEmpresa) REFERENCES EMPRESA(codigoEmpresa),
+  CONSTRAINT PARTICULAR_ANALISIS_FK FOREIGN KEY (Particular_codigoParticular) REFERENCES PARTICULAR(codigoParticular),
+  CONSTRAINT EMPLEADO_ANALISIS_FK FOREIGN KEY (rutEmpleadoRecibe) REFERENCES EMPLEADO(rutEmpleado)
+  
 );
 
 DROP TABLE IF EXISTS `RESULTADOANALISIS`;
 CREATE TABLE RESULTADOANALISIS(
-	  `idTipoAnalisis` INT NOT NULL,
-    `idAnalisisMuestras` INT NOT NULL,
-    `fechaRegistro` DATE NOT NULL,
-    `PPM` INT NOT NULL,
-    `estado` BIT NOT NULL,
-    `rutEmpleadoAnalista` VARCHAR(10),
-	CONSTRAINT RESULTADO_TIPO_FK FOREIGN KEY (idTipoAnalisis) REFERENCES TIPOANALISIS(idTipoAnalisis),
-    CONSTRAINT RESULTADO_ANALISIS_FK FOREIGN KEY (idAnalisisMuestras) REFERENCES ANALISISMUESTRAS(idAnalisisMuestras),
-    CONSTRAINT RESULTADO_EMPLEADO_FK FOREIGN KEY (rutEmpleadoAnalista) REFERENCES EMPLEADO(rutEmpleado)
+	`idTipoAnalisis` INT NOT NULL,
+  `idAnalisisMuestras` INT NOT NULL,
+  `fechaRegistro` DATE NOT NULL,
+  `PPM` INT NOT NULL,
+  `estado` BIT NOT NULL,
+  `rutEmpleadoAnalista` VARCHAR(10)
 );
 
 DROP TABLE IF EXISTS `TELEFONO`;
 CREATE TABLE TELEFONO(
 	`idTelefono` INT PRIMARY KEY NOT NULL,
-    `numeroTelefono` VARCHAR(20) NOT NULL,
-    `Particular_codigoParticular` INT NOT NULL,
-    CONSTRAINT TELEFONO_PARTICULAR_FK FOREIGN KEY (Particular_codigoParticular) REFERENCES PARTICULAR(codigoParticular)
+  `numeroTelefono` VARCHAR(20) NOT NULL,
+  `Particular_codigoParticular` VARCHAR(10) NOT NULL,
+  CONSTRAINT TELEFONO_PARTICULAR_FK FOREIGN KEY (Particular_codigoParticular) REFERENCES PARTICULAR(codigoParticular)
 );

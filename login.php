@@ -47,7 +47,7 @@
 						<input id="btnEmpresa" type="radio" name="btnTipoUsuario">
 						<label for="btnEmpresa"><h5>Empresa</h5></label>
 					</div>
-					<div class="col offset-md-1">
+					<div class="col offset-md-2">
 						<input id="btnPersona" type="radio" name="btnTipoUsuario">
 						<label for="btnPersona"><h5>Persona</h5></label>
 					</div>
