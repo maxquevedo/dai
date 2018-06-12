@@ -1,4 +1,4 @@
-<form class="form-control" method="get" action="registrarParticular.php" name="registrar">
+<form class="form-control" method="post" action="registrarParticular.php" name="registrar">
 	<div class="row form-group ">
 		<h4 class=" col-lg-9 font-weight-bold offset-md-2 text-center"> Empresa</h4>
 	</div>
@@ -66,6 +66,9 @@
 		<div class="col-md1">
 			<button id="btnLimpiar" class="btn btn-secondary">Limpiar</button>
 		</div>
+	</div>
+	<div class="row form-group">
+		<?php require('tipoMuestra.php'); ?>
 	</div>
 </form>
 <script>

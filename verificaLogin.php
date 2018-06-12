@@ -15,6 +15,8 @@
 			}
 			$rs->MoveNext();
 		}
+	}else{
+		echo "ERROR 404";
 	}
 
 ?>

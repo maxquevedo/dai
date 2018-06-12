@@ -38,5 +38,5 @@
 	function set_contrasena($dir){
 		$this->direccion = $dir;
 	}
-	}
-?>
+}
+
