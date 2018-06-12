@@ -15,7 +15,7 @@
 				<span>Rut  </span>
 		</div>
 		<div class="col-lg-3 ">
-			<input id="rut" type="text" class="form-control" name="rut">
+			<input id="rut" type="text" class="form-control" name="rutEmpresa">
 		</div>
 	</div>
 	<div class="row form-group">
@@ -32,7 +32,7 @@
 				<span>Rut  </span>
 		</div>
 		<div class="col-lg-3 ">
-			<input id="rutPersona" type="text" class="form-control" name="rut">
+			<input id="rutPersona" type="text" class="form-control" name="rutContacto">
 		</div>
 	</div>
 	<div class="row form-group">
@@ -40,7 +40,7 @@
 				<span>Nombre  </span>
 		</div>
 		<div class="col-lg-3 ">
-			<input id="nombrePersona" type="text" class="form-control" name="nombre">
+			<input id="nombrePersona" type="text" class="form-control" name="nombreContacto">
 		</div>
 	</div>
 	<div class="row form-group">
@@ -48,7 +48,7 @@
 				<span>Email  </span>
 		</div>
 		<div class="col-lg-3 ">
-			<input id="emailPersona" type="email" class="form-control" name="email">
+			<input id="emailPersona" type="email" class="form-control" name="emailContacto">
 		</div>
 	</div>
 	<div class="row form-group">
@@ -56,7 +56,7 @@
 				<span>Teléfono  </span>
 		</div>
 		<div class="col-lg-3 ">
-			<input id="telefonoPersona" type="text" class="form-control" name="telefono">
+			<input id="telefonoPersona" type="text" class="form-control" name="telefonoContacto">
 		</div>
 	</div>
 	<div class="row form-group">
@@ -66,9 +66,6 @@
 		<div class="col-md1">
 			<button id="btnLimpiar" class="btn btn-secondary">Limpiar</button>
 		</div>
-	</div>
-	<div class="row form-group">
-		<?php require('tipoMuestra.php'); ?>
 	</div>
 </form>
 <script>

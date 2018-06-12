@@ -1,13 +1,13 @@
 <?php
 	class Empresa{
-		public $rut;
+		public $rutE;
 		public $nombre;
 		public $contraseña;
 		public $direccion;
 		public $codigo;
 
 
-		function __construct($rut,$nombre,$contraseña,$direccion,$cod){
+		function __construct($cod,$rutE,$nombre,$contraseña,$direccion,){
 			$this->rut = $rut;
 			$this->nombre = $nombre;
 			$this->contraseña = $contraseña;
