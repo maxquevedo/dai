@@ -9,31 +9,22 @@ CREATE TABLE TIPOANALISIS(
 `nombre` VARCHAR(45) NOT NULL
 );
 
-DROP TABLE IF EXISTS `USUARIO`;
-CREATE TABLE `USUARIO` (
-  `codigoUsuario` VARCHAR(10) NOT NULL,
-  `nombreUsuario` VARCHAR(30) NOT NULL,
-  `TipoUsuario` VARCHAR(15) NOT NULL,
-	`passwordUsuario`VARCHAR(15) NOT NULL,
-  `EstadoUsuario` CHAR(3) DEFAULT 'INH',
-  PRIMARY KEY (`codigoUsuario`)
-);
-
 DROP TABLE IF EXISTS `PARTICULAR`;
 CREATE TABLE PARTICULAR(
-  `codigoParticular` VARCHAR(10) PRIMARY KEY,
-  `rutParticular` VARCHAR(45) NOT NULL,
-  `nombreParticular` VARCHAR(45) NOT NULL,
-  `direccionParticular` VARCHAR(45) NOT NULL,
-  `emailParticular` VARCHAR(100) NOT NULL
+  `codigo` VARCHAR(10) PRIMARY KEY NOT NULL,
+  `rut` VARCHAR(45) NOT NULL,
+  `password`VARCHAR(15) NOT NULL,
+  `nombre` VARCHAR(45) NOT NULL,
+  `direccion` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(100) NOT NULL,
+  `telefono` VARCHAR(20) NOT NULL
 );
 
 DROP TABLE IF EXISTS `EMPRESA`;
 CREATE TABLE EMPRESA(
-  `codigoEmpresa` VARCHAR(10) PRIMARY KEY NOT NULL,
-  `rutEmpresa` VARCHAR(30) NOT NULL,
-  `direccionEmpresa` VARCHAR(50) NOT NULL,
-CONSTRAINT empresa_usuario_fk FOREIGN KEY (codigoEmpresa) REFERENCES USUARIO(codigoUsuario)
+  `codigo` VARCHAR(10) PRIMARY KEY NOT NULL,
+  `password`VARCHAR(15) NOT NULL,
+  `rutEmpresa` VARCHAR(30) NOT NULL
 );
 
 DROP TABLE IF EXISTS `EMPLEADO`;
@@ -49,8 +40,8 @@ CREATE TABLE CONTACTO(
   `nombreContacto` VARCHAR(30) NOT NULL,
   `emailContacto` VARCHAR(45) NOT NULL,
   `telefonoContacto` VARCHAR(15) ,
-  `Empresa_codigoEmpresa` VARCHAR(10) NOT NULL,
-  CONSTRAINT contacto_empresa_fk FOREIGN KEY (Empresa_codigoEmpresa) REFERENCES EMPRESA(codigoEmpresa)
+  `Empresa_codigo` VARCHAR(10) NOT NULL,
+  CONSTRAINT contacto_empresa_fk FOREIGN KEY (Empresa_codigo) REFERENCES EMPRESA(codigo)
 );
 
 
@@ -63,8 +54,8 @@ CREATE TABLE ANALISISMUESTRAS(
   `Empresa_codigoEmpresa` VARCHAR(10) NOT NULL,
   `Particular_codigoParticular` VARCHAR(10) NOT NULL,
   `rutEmpleadoRecibe` VARCHAR(10) NOT NULL,
-  CONSTRAINT EMPRESA_ANALISIS_FK FOREIGN KEY (Empresa_codigoEmpresa) REFERENCES EMPRESA(codigoEmpresa),
-  CONSTRAINT PARTICULAR_ANALISIS_FK FOREIGN KEY (Particular_codigoParticular) REFERENCES PARTICULAR(codigoParticular),
+  CONSTRAINT EMPRESA_ANALISIS_FK FOREIGN KEY (Empresa_codigoEmpresa) REFERENCES EMPRESA(codigo),
+  CONSTRAINT PARTICULAR_ANALISIS_FK FOREIGN KEY (Particular_codigoParticular) REFERENCES PARTICULAR(codigo),
   CONSTRAINT EMPLEADO_ANALISIS_FK FOREIGN KEY (rutEmpleadoRecibe) REFERENCES EMPLEADO(rutEmpleado)
   
 );
@@ -84,5 +75,5 @@ CREATE TABLE TELEFONO(
 	`idTelefono` INT PRIMARY KEY NOT NULL,
   `numeroTelefono` VARCHAR(20) NOT NULL,
   `Particular_codigoParticular` VARCHAR(10) NOT NULL,
-  CONSTRAINT TELEFONO_PARTICULAR_FK FOREIGN KEY (Particular_codigoParticular) REFERENCES PARTICULAR(codigoParticular)
+  CONSTRAINT TELEFONO_PARTICULAR_FK FOREIGN KEY (Particular_codigoParticular) REFERENCES PARTICULAR(codigo)
 );

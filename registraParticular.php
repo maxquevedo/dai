@@ -5,8 +5,9 @@
 	$contraseña = $_POST['contraseña'];
 	$nombre = $_POST['nombre'];
 	$direccion = $_POST['direccion'];
-	$emai = $_POST['email'];
+	$email = $_POST['email'];
 	$telefono= $_POST['telefono'];
-	$nuevo = new Particular($codigo,$rut,$nombre,$contraseña,"av 12",$email);	
-	$nuevo->registrar;
+	$nuevo = new Particular($codigo,$rut,$nombre,$contraseña,$direccion,$email,$telefono);	
+	
+	$nuevo->registrar();
 ?>

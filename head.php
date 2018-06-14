@@ -7,6 +7,11 @@
 		<script src="js/jquery-3.3.1.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="css/bootstrap.css">
+		<script>
+			$("#navIniciarSesion").click(function(){
+				window.load('verificaLogin.php');
+			});
+		</script>
 		<style>
 			footer{
 				background-color: #2A4F6E;

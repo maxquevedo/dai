@@ -22,7 +22,7 @@
 						<span class="font-weight-bold">Contraseña:</span>
 					</div>
 					<div class="col-md-3">
-					 	<input type="text" name="pass" id="pass" class="form-control">	
+					 	<input type="password" name="pass" id="pass" class="form-control">	
 					 </div>
 				</div>
 				<div class="row form-group">

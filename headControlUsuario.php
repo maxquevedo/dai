@@ -28,6 +28,10 @@
       border-radius: 10px;
     }
   </style>
+  <?php 
+    require('conexion_bd.php');
+    //print_r($_POST);
+  ?>
 </head>
 <body>
   <header>
@@ -38,6 +42,8 @@
       <li class="nav-link active "><a id="navInicio" name="navInicio" href="index.php" style="color:white;">Inicio</a></li>
       <li class="nav-link active"><a id="navEnvioMuestra" name="navEnvioMuestra" href="form-envioMuestra.php" style="color:white;">Envio de muestras </a></li>
     </ul>
-     <h4 class="text-right"><a style="color:white;">Bienvenido "bdnombreusuario"</a></h4>
+    <ul class="nav item font-weight-bold">
+       <li class="nav-link active"><a class="text-right" style="color:white;" href="cerrarSesion.php" id="cerrar">Cerrar Sesión</a></li>
+    </ul>
   </nav>
   	<div class="container">

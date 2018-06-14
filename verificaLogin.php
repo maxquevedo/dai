@@ -1,22 +1,21 @@
 <?php
 	require('conexion_bd.php');
-	$sql = "SELECT * FROM usuario where nombreUsuario = '{$_POST['user']}'";
-	if ($rs = $GLOBALS['db']->Execute($sql))	
-	{
-		while (!$rs->EOF)
-		{
-			if($rs->fields['nombreUsuario'] == $_POST['user'] && $rs->fields['passwordUsuario'] == $_POST['pass']){
-				header('Location: index.php');
+	if (count($_POST) > 0){
+		$sql = "SELECT * FROM particular where email = '{$_POST['user']}' AND password = '{$_POST['pass']}'";
+		if ($rs = $GLOBALS['db']->Execute($sql)){
+			if($rs->EOF){
+				echo "<h1 class='align-middle'><center>Ups, contrasenia o usuario equivocados! </center></h1>";
+				echo "<h2><center><a href='iniciarSesion.php'>Click aca para volver al login.</a></center></h2>";
 			}else{
-				echo "<script>
-						alert('Usuario y/o Contraseña incorrecta(s)');
-						window.location.replace('login.php');
-					</script>";
+				session_start();
+				$_SESSION['nombre']= $rs->fields['nombre'];
+				$_SESSION['email'] = $rs->fields['email'];
+				$_SESSION['telefono'] = $rs->fields['telefono'];
+				echo "<script>alert('Bienvenido ".$rs->fields['nombre']."'); window.location.href='form-envioMuestra.php'</script>";
 			}
-			$rs->MoveNext();
 		}
-	}else{
-		echo "ERROR 404";
-	}
 
+	}else{
+		echo "NO";
+	}
 ?>

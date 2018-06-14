@@ -18,8 +18,10 @@
 			echo "<center>Error al conectar con el servidor BD<br />".$GLOBALS['db']->ErrorMsg()."</center>";
 			die;
 		}
-	    $GLOBALS['db']->Execute("set names 'utf8'"); 
+	    $GLOBALS['db']->Execute("set names 'utf8'");
+	    $GLOBALS['db']->Execute("set charset 'utf-8'"); 
 	}
 	
 	$ADODB_FETCH_MODE = ADODB_FETCH_ASSOC;
+
 ?>
