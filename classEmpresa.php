@@ -1,26 +1,26 @@
 <?php
+	require('conexion_bd.php');
 	class Empresa{
-		public $rutE;
-		public $nombre;
-		public $contraseña;
-		public $direccion;
 		public $codigo;
+		public $rut;
+		public $contraseña;		
 
 
-		function __construct($cod,$rutE,$nombre,$contraseña,$direccion,){
-			$this->rut = $rut;
-			$this->nombre = $nombre;
-			$this->contraseña = $contraseña;
-			$this->direccion = $direccion;
+		function __construct($cod,$rut,$contraseña){
 			$this->codigo = $cod;
+			$this->rut = $rut;
+			$this->contraseña = $contraseña;
 		}
 
-		require('conexion_bd.php');
 
-		function guardar(){
-			$sql = "INSERT INTO VALUES();"
-			echo "-- FUNCIONO --";
+		function registrar(){
+			$sql = "INSERT INTO empresa VALUES('','$this->rut','$this->contraseña')";
+			echo $sql;
+			if($GLOBALS['db']->Execute($sql)){
+				echo "holi";
+			}else{
+				echo "chai";
+			}			
 		}
 
 	}
-?>

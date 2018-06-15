@@ -4,14 +4,6 @@
 	</div>
 	<div class="row form-group">
 		<div class="col-md-1 offset-md-4 form-group">
-				<span>Código  </span>
-		</div>
-		<div class="col-lg-3 ">
-			<input id="codigo" type="text" class="form-control" name="codigo">
-		</div>
-	</div>
-	<div class="row form-group">
-		<div class="col-md-1 offset-md-4 form-group">
 				<span>Rut  </span>
 		</div>
 		<div class="col-lg-3 ">

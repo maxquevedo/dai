@@ -1,5 +1,10 @@
 <?php
-	require('head.php');
+	session_start();
+	if(count($_SESSION) < 1){
+		include('head.php');
+	}else{
+		include('headControlUsuario.php');
+	}
 ?>
 <div id="content" style="margin-top:2%; margin-bottom: 2%">
 	<div class="row">
