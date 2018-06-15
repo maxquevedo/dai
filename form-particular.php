@@ -15,7 +15,7 @@
 				<span>Contraseña  </span>
 		</div>
 		<div class="col-lg-3 ">
-			<input id="contraseña" type="text" class="form-control" name="contraseña">
+			<input id="contraseña" type="password" class="form-control" name="contraseña">
 		</div>
 	</div>
 	<div class="row form-group">

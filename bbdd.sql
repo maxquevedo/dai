@@ -63,3 +63,5 @@ CREATE TABLE TELEFONO(
   `numeroTelefono` VARCHAR(20) NOT NULL,
   `Particular_codigoParticular` VARCHAR(10) NOT NULL
 );
+
+INSERT INTO PARTICULAR VALUES('',"12345678","1234","Ejemplo Perez","Av Siempre Viva","ejemplo@gmail.com","1234567");

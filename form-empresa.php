@@ -15,7 +15,7 @@
 				Contraseña
 		</div>
 		<div class="col-lg-3 ">
-			<input id="contraseña" type="text" class="form-control" name="contrasena">
+			<input id="contraseña" type="password" class="form-control" name="contrasena">
 		</div>
 	</div>
 	<h4 class=" col-lg-9 font-weight-bold offset-md-2 text-center"> Contacto</h4>
