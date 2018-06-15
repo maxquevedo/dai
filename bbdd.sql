@@ -34,7 +34,7 @@ CREATE TABLE CONTACTO(
   `nombreContacto` VARCHAR(30) NOT NULL,
   `emailContacto` VARCHAR(45) NOT NULL,
   `telefonoContacto` VARCHAR(15) ,
-  `Empresa_codigo` VARCHAR(10) NOT NULL,
+  `Empresa_codigo` VARCHAR(10) NOT NULL
 );
 
 
@@ -44,7 +44,7 @@ CREATE TABLE ANALISISMUESTRAS(
   `fechaRecepcion` DATE NOT NULL,
   `cantidadMuestra` INT NOT NULL,
   `codigoRandom` VARCHAR(10) NOT NULL,
-  `rutUsuario` VARCHAR(10) NOT NULL,
+  `rutUsuario` VARCHAR(10) NOT NULL
 );
 
 DROP TABLE IF EXISTS `RESULTADOANALISIS`;
@@ -61,5 +61,5 @@ DROP TABLE IF EXISTS `TELEFONO`;
 CREATE TABLE TELEFONO(
 	`idTelefono` INT PRIMARY KEY NOT NULL,
   `numeroTelefono` VARCHAR(20) NOT NULL,
-  `Particular_codigoParticular` VARCHAR(10) NOT NULL,
+  `Particular_codigoParticular` VARCHAR(10) NOT NULL
 );
