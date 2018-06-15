@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	include('headControlUsuario.php');
-	print_r($_SESSION);
+	//print_r($_SESSION);
 ?>
 <form class="form-control" method="post" action="registraEnvioMuestra.php" name="registrar">
 	<div class="row form-group ">

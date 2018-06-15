@@ -21,19 +21,21 @@
 
 
 		function registrar(){
-			$sql ="INSERT INTO particular VALUES (
-			'$this->codigo',
+			$sql = "INSERT INTO particular VALUES (
+			'',
 			'$this->rut',
 			'$this->contraseña',
 			'$this->nombre',
 			'$this->direccion',
 			'$this->email',
 			'$this->telefono')";
-			echo $sql;
 			if($rs = $GLOBALS['db']->Execute($sql)){
-				echo "<h3> ¡Registrado con exito! </h3>";
+				echo "<script>alert('Registrado con exito');</script>";
+				echo "<script>window.location.href='iniciarSesion.php'</script>";
 			}else{
 				echo "<h3>Error</h3>";
+				sleep(5);
+				echo "<script>window.load.href='login.php'</script>";
 			}
 		}
 
