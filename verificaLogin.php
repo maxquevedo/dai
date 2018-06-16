@@ -8,6 +8,7 @@
 				echo "<h2><center><a href='iniciarSesion.php'>Click aca para volver al login.</a></center></h2>";
 			}else{
 				session_start();
+				$_SESSION['rut'] = $rs->fields['rut'];
 				$_SESSION['codigo'] = $rs->fields['codigo'];
 				$_SESSION['nombre']= $rs->fields['nombre'];
 				$_SESSION['email'] = $rs->fields['email'];

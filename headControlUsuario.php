@@ -41,6 +41,7 @@
     <ul class="nav item font-weight-bold">
       <li class="nav-link active "><a id="navInicio" name="navInicio" href="index.php" style="color:white;">Inicio</a></li>
       <li class="nav-link active"><a id="navEnvioMuestra" name="navEnvioMuestra" href="form-envioMuestra.php" style="color:white;">Envio de muestras </a></li>
+      <li class="nav-link active"><a id="navEnvioMuestra" name="navEnvioMuestra" href="muestrasEnviadas.php" style="color:white;">Muestras enviadas </a></li>
     </ul>
     <ul class="nav item font-weight-bold">
        <li class="nav-link active"><a class="text-right" style="color:white;" href="cerrarSesion.php" id="cerrar">Cerrar Sesión</a></li>
